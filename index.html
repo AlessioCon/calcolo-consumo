@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <title>elettricità</title>
+        <meta name="author" content="Alessio Conforto">
+        <meta name="description"  content="calcolo del consumo elettrico per i singoli apparecchi e per l'installazione di fonti di energie rinnovabili">
+        <meta name="keywords" content="energia , calcolo , rinnovabili ">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <script rel="javascript" type="text/javascript" defer src="script.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Calcolo elettricità</h1>
+            <div id="imgNight"></div>
+            <div id="night" role="night mode">
+               <input type="checkbox" class="checkB" id="backgroud" name="color">
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li class="scelta" id="consumo">
+                    <h2>calcolo consumo</h2>
+                    <p>scopri quanto consumi utilizzando un apparecchio elettronico!</p>
+                </li>
+            </ul>
+
+        </nav>
+
+        <main>
+              <div class="descrizione" role="descrizione">
+                 <h2>Calcolo consumo elettrico</h2>
+                 <p>Cerchiamo di capire quanto costa l'utilizzo di un apparecchio elettrico basandoci su pochi dati:
+                 </p>
+                 <ol>
+                    <li>potenza assorbita in <b>kilowatt o watt</b> (kW o W).</li>
+                    <li>il <b>tempo</b> di utilizzo.</li>
+                    <li>quanto costa <b>un kilowattora</b>.</li>
+                 <ol>
+
+              </div>
+            
+            <form name="watt">
+            <h3>Non conosco i Watt</h3>
+            <fieldset>
+            <p>Se non conosci la potenza che assorbe l'apparecchio possiamo ricavarla tramite la moltiplicazione tra 
+                <b>l'intensità</b> (A) e la <b>tensione</b> (V)
+            </p>
+            
+                <label for="A">intensità</label>
+                <input type="tel" id="A" name="A" ><span>A</span>
+                <label for="V">tensione</label>
+                <input type="tel" id="V" name="V" ><span>V</span>
+
+                <button id="inWatt">
+                    invio
+                </button>
+
+            </fieldset>
+            <h3>Calcolo del consumo</h3>
+            <fieldset>
+                <p id="cal">ora passiamo al calcolo vero e proprio del consumo elettrico.</p>
+
+                    <label for="valoreW">Inserisci la potenza in Watt o kiloWatt</label>
+                    <input type="tel" id="valoreW" name="valoreW">
+                    <select name='unitaWatt'>
+                        <option id="watt">W</option>
+                        <option id="kwatt">kW</option>
+                    </select>
+
+                    <label for="valoreT">inserisci il tempo di utilizzo al giorno in <b>minuti</b> (m) o <b>ore</b> (h)</label> 
+                    <input type="tel" id="valoreT" name="valoreT">
+                    <select name="unitaTempo">
+                        <option id="minuti">m</option>
+                        <option id="ore">h</option>
+                    </select>
+
+                    <label for="costo">inserisci il costo di un kiloWattora</label>
+                    <input type="tel" id="costo" name="costo"><span> €</span>
+
+                    <button id="inConsumo">
+                        invio
+                    </button>
+                </fieldset>
+
+              </form>
+        </main>
+        <footer>
+            <a href="https://it.linkedin.com/in/alessioconforto"><span>Creatore</span> Alessio Conforto</a>
+        </footer>
+    </body>
+</html>

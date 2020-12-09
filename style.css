@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;600;700&display=swap');
+
+
+/*variabili di colore*/
+:root {
+    --bg       :#fcfcfc;
+    --bg1      :#0073CE;
+    --bg1-1    :#00579e;
+    --bg2      :#84b524;
+    --text     :#242424;
+}
+
+
+/*general reset*/
+
+body {
+    margin          : 0px;
+    padding         : 0px;
+    box-sizing      : border-box;
+    font-family     : 'Asap', sans-serif;
+    color           : var(--text);
+    background-color: var(--bg);
+}
+b {color: var(--bg2);}
+
+/*button reset*/
+button {
+    appearance        : none;
+    -webkit-appearance: none;
+    width             : 200px;
+    height            : 32px;
+    border            : 2px solid var(--text);
+    border-radius     : 0px;
+    background-color  : var(--bg);
+    color             : var(--text);
+}
+
+button:hover, input[type='tel']:hover, select:hover {background-color: rgba(0, 0, 0, 0.05);}
+button:active , button:focus{
+    outline-style: unset;
+    border-color : var(--bg1);
+    outline-width: 2px;
+    outline-color: var(--bg1);
+    color        : var(--bg1);
+}
+
+/*input reset*/
+input[type='tel'] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 70%;
+    border: 2px solid var(--text);
+    border-radius: 0px;
+    margin: 20px 5px;
+}
+
+input[type='tel']:active , input[type='tel']:focus{
+    border-color : var(--bg1);
+    outline-width: 2px;
+    outline-color: var(--bg1);
+    outline-style: unset;
+}
+
+
+/*select reset*/
+
+select{
+    width:64px;
+    height: 21px;
+    border: 2px solid var(--text);
+    border-radius: 0px;
+}
+
+select:active , select:focus {
+    border-color: var(--bg1);
+    border-radius: 0px;
+}
+
+/*label reset*/
+
+label , .risultatow {
+    display: block;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+/*scelta colore sfondo*/
+
+/*default div , check , immagine*/
+
+header  div + div {
+    max-width       : 44px; 
+    min-width       : 44px;
+    height          : 14px;
+    border-radius   : 16px;
+    margin          : auto 0px auto 10px ;
+    background-color: var(--bg);
+}
+
+.checkB{
+    -webkit-appearance : none ;
+    appearance         : none ;
+    width              : 24px ;
+    height             : 24px ;
+    border-radius      : 20px ;
+    margin             : 0px;
+    position           : relative;
+    bottom             : 5px;
+    left               : -2px;
+    background-color   : #e9e9e9 ;
+    outline            : none;
+} 
+
+#imgNight {
+  margin: auto 0px;
+  height: 16px;
+  font-weight: bolder;
+  width : 16px;
+  background-image: url('src/img/sun.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/*selezione e deselezione check*/
+
+
+#onDarck{
+    left                      : 22px;
+    background-color          : #9CC219;
+    animation-name            : onColor;
+    animation-duration        : 0.5s;
+    animation-timing-function : ease-out;
+    
+}
+
+
+#offDarck{
+    left                      : -2px;
+    background-color          :#e9e9e9;
+    animation-name            : offColor;
+    animation-duration        : 0.5s;
+    animation-timing-function : ease-out;
+}
+/*animazione per il checkbox*/
+
+@keyframes onColor {
+    from {
+        left            : -2px;
+        background-color: #e9e9e9 ;
+    }
+    to   {
+        left: 22px; 
+        background-color: #9CC219 ;
+    }
+}
+
+@keyframes offColor {
+    from {
+        left            : 22px; 
+        background-color: #9CC219 ;
+    }
+    to   {
+        left            : -2px; 
+        background-color: #e9e9e9 ;
+    }
+}
+
+/*header*/
+
+header {
+    display         : flex;
+    padding         : 0px 20px;
+    vertical-align  : center;
+    background-color: var(--bg1);
+    color           : var(--bg);
+}
+
+header h1 {width : 100%;}
+
+/*navigation*/
+
+nav ul {
+    list-style: none;
+    margin    : 0px auto;
+    padding   : 20px 0px;
+}
+
+nav ul li {
+    display         : flex;
+    flex-flow       : row wrap;
+    justify-content : space-evenly;
+    border-radius   : 15px;
+    color           : var(--bg);
+    background-color: var(--bg1);
+    width           : 80%;
+    max-width       : 300px;
+    margin          : 0px auto 20px;
+    height          : 200px;
+    text-align      : center;
+}
+
+@media (min-width: 720px) {
+    nav ul {
+        display  : flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0px 20px;
+        border: 3px solid var(--bg1);
+    }
+}
+
+nav ul li h2{
+    margin    : 48px 0px 0px; 
+    width     : 100%;
+    text-align: center;
+}
+
+nav ul li p {
+    margin: 0px 5px 10px;
+}
+
+#consumo {
+    background-image   : url('src/img/calcolo\ energia.png');
+    background-repeat  : no-repeat;
+    background-position: top 10px center;
+    background-size    : 32px 32px;
+}
+
+/*descrizione scelta*/
+.descrizione {
+    padding         : 20px;
+    margin          : 0px ;
+    background-color: var(--bg1);
+    color           : var(--bg);
+    height          : 200px;
+}
+
+.descrizione ol li {
+    margin-bottom: 10px;
+}
+
+/*sezione*/
+form {padding: 20px 10px;}
+
+form fieldset:first-of-type {margin: 0 auto 40px;}
+
+form fieldset {
+    width           : 80%;
+    max-width       : 500px;
+    padding         : 12px 10px;
+    margin          : 0 auto;
+    border          : none;
+    border-radius   : 0px 0px 15px 15px;
+    background-color: rgba(0,0,0,0.05);
+    text-align      : center;
+}
+
+form h3  {
+    width    : 80%;
+    max-width: 500px;
+    background-color: var(--bg1);
+    color           : var(--bg);
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 10px;
+    margin: 0 auto;
+    border-radius: 15px 15px 0px 0px;
+}
+
+fieldset button {
+    display: block;
+    margin: 20px auto 0px;
+}
+form span {
+    display: inline-block;
+    width  : 60px;
+    height: 17px;
+    position: relative;
+    top:2px;
+    left:3px;
+    background-color: var(--bg);
+    border: 2px solid var(--text);
+}
+
+table {
+    width:80%;
+    max-width: 500px;
+    border: 2px solid var(--text);
+    margin: 20px auto;
+    border-collapse: collapse;
+    border-radius: 15px;
+}
+
+table tr {
+    height: 40px;
+}
+table tr:first-child {
+   height: 40px;
+   background-color: rgba(0,0,0,0.1);
+   border: 2px solid var(--text);
+}
+
+
+
+/**/
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg1);
+    color: var(--bg);
+    height: 100px;
+    padding: 0px 20px;
+}
+
+footer a span {color: var(--bg2);}
+
+footer a {
+    margin: auto 0px;
+    color: var(--bg); 
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+footer a:hover {color: var(--text)}
+
+footer a::after {
+    content: url('src/img/linkedin.png');
+    position: relative;
+    left: 5px;
+    top: 8px
+}
