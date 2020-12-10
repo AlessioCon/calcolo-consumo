@@ -123,7 +123,7 @@ function costo () {
 
         if (unitaWat ==='W') {wat /= 1000; };
 
-        if (unitaT === 'm' && parseInt(tempo) > 1440) {
+        if (unitaT === 'm' && tempo > 1440) {
 
             let p = document.createElement('p');
             p.textContent = `attenzoione i minuti in un giorno sono massimo 1440!`;
@@ -134,11 +134,11 @@ function costo () {
             return ;
 
         }
-
-        if (unitaT ==='m') {tempo = (Math.floor(tempo / 60)) + ((tempo %=60)/100);};
+        
+        if (unitaT ==='m') {tempo = (Math.floor(tempo / 60)) + ((tempo %= 60)/100);};
 
         /*superamento ore*/ 
-        if (unitaT === 'h' &&  parseInt(tempo) > 24) {
+        if (unitaT === 'h' &&  tempo > 24) {
 
             let p = document.createElement('p');
             p.textContent = `attenzoione le ore in un giorno sono massimo 24!`;
@@ -170,12 +170,14 @@ function costo () {
             giorno.textContent = 'giorno';
             settimana.textContent= 'settimana';
             anno.textContent= 'anno';
-    
-            let c = wat * tempo * costo;
 
-            Ngiorno.textContent    = arotondo(c) + ' €';
-            Nsettimana.textContent = arotondo(c * 7) +  ' €';
-            Nanno.textContent      = arotondo(c * 365) + ' €';
+            
+            let c =(wat * tempo) * costo;
+
+
+            Ngiorno.textContent    = arotondo(c , 1) + ' €';
+            Nsettimana.textContent = arotondo(c , 7) +  ' €';
+            Nanno.textContent      = arotondo(c , 365) + ' €';
 
 
 
@@ -195,6 +197,7 @@ function costo () {
  
     }
 
+    // inserimento di lettere 
     if (isNaN(wat) || isNaN(tempo) || isNaN(costo)) {
 
         let p = document.createElement('p');
@@ -213,31 +216,32 @@ function costo () {
     btncosto.blur()
 }
 
-function arotondo (numero) {
+function arotondo (numero , moltiplicatore) {
 
-    let num = numero.toString();
+    let str = (numero * moltiplicatore).toString();
+    
 
-    if (num.indexOf('.') !== '-1') {
+    if (str.indexOf('.') !== -1) {
 
-        decimo = (num.indexOf('.')+3);
+        decimo = str.indexOf('.') + 3;
 
-        numDec= num.substr(0,decimo)
+        numDec= str.substr(0,decimo);
         
         return numDec;
-    } else {return num;}
-}
+    } else {return str;}
+};
 
 
 const input = document.querySelectorAll('input');
 const select= document.querySelectorAll('select');
 
 for (i=0 ; i< input.length ; i++)  {
-    input[i].addEventListener('change', function () {this.blur()})
-}
+    input[i].addEventListener('change', function () {this.blur()});
+};
 
 for (i=0 ; i< select.length ; i++)  {
-    select[i].addEventListener('change', function () {this.blur()})
-}
+    select[i].addEventListener('change', function () {this.blur()});
+};
 
 
  
