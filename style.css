@@ -35,7 +35,7 @@ button {
     color             : var(--text);
 }
 
-button:hover, input[type='tel']:hover, select:hover {background-color: rgba(0, 0, 0, 0.05);}
+button:hover, input[type='tel']:hover, select:hover {background-color: rgba(255, 255, 255, 0.05);}
 button:active , button:focus{
     outline-style: unset;
     border-color : var(--bg1);
@@ -93,8 +93,8 @@ header  div + div {
     max-width       : 44px; 
     min-width       : 44px;
     height          : 14px;
-    border-radius   : 16px;
     margin          : auto 0px auto 10px ;
+    border-radius   : 16px;
     background-color: var(--bg);
 }
 
@@ -113,14 +113,14 @@ header  div + div {
 } 
 
 #imgNight {
+  width: 80%;
   margin: auto 0px;
   height: 16px;
   font-weight: bolder;
-  width : 16px;
   background-image: url('src/img/sun.png');
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: right;
 }
 
 /*selezione e deselezione check*/
@@ -171,13 +171,23 @@ header  div + div {
 
 header {
     display         : flex;
-    padding         : 0px 20px;
+    flex-wrap       : wrap ;
+    padding         : 0px 20px 20px;
     vertical-align  : center;
     background-color: var(--bg1);
     color           : var(--bg);
 }
 
 header h1 {width : 100%;}
+
+
+@media (min-width: 720px) {
+    header {
+        flex-wrap: nowrap;
+        padding-bottom: 0px;
+
+    }
+}
 
 /*navigation*/
 
@@ -237,7 +247,6 @@ nav ul li p {
     margin          : 0px ;
     background-color: var(--bg1);
     color           : var(--bg);
-    height          : 200px;
 }
 
 .descrizione ol li {

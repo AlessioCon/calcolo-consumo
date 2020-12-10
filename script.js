@@ -228,5 +228,16 @@ function arotondo (numero) {
 }
 
 
+const input = document.querySelectorAll('input');
+const select= document.querySelectorAll('select');
+
+for (i=0 ; i< input.length ; i++)  {
+    input[i].addEventListener('change', function () {this.blur()})
+}
+
+for (i=0 ; i< select.length ; i++)  {
+    select[i].addEventListener('change', function () {this.blur()})
+}
+
+
  
-    
